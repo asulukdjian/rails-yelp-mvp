@@ -1,0 +1,14 @@
+<div class=container>
+  <h1>Welcome to your Restaurants list</h1>
+
+    <% @restaurants.each do |restaurant| %>
+
+    <div class="card" style="width: 18rem;">
+    <%= image_tag "https://source.unsplash.com/random/?restaurant", class: "card-img-top" %>
+      <h2><%= restaurant.name.capitalize %></h2>
+      <%= link_to "Discover", restaurant_path(restaurant), class: "btn btn-primary" %>
+    </div>
+    <% end %>
+<br>
+<%= link_to "Add a restaurant", new_restaurant_path %>
+</div>
